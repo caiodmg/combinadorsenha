@@ -1,6 +1,9 @@
 import random 
+from faker import Faker
 
-palavras = ['Relampago', 'Bicicleta', 'Supermercado', 'Rodoviaria', 'Labirinto']
+fake = Faker('pt_BR')
+
+palavras = [fake.word() for _ in range(1)]
 caracteres = "!@#$%&*"
 
 def gerar_combinacao():
@@ -10,10 +13,12 @@ def gerar_combinacao():
     caracter2 = random.choice(caracteres)
     
     #Utilizei o random.randit para escolher 1 numero no intervalo de 0 a 500
-    numero = (str(random.randint(0, 500)))
+    numero1 = (str(random.randint(0, 500)))
+    numero2 = (str(random.randint(0, 500)))
+     
     
     #Fiz uma lista de senha com o numero, palavra e caracteres escolhidos no choice
-    senha = [palavra, numero, numero, caracter, caracter2]
+    senha = [palavra, numero1, numero2, caracter, caracter2]
 
     #Utilizei o random.shuffle para embaralhar a lista de senha
     random.shuffle(senha)
